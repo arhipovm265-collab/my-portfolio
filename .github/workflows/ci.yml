@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Проверка HTML
+        run: |
+          echo "Привет из GitHub Actions!"
+          echo "Файлы в репозитории:"
+          ls -la
+          echo "Проверка завершена"
